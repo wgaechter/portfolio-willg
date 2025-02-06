@@ -13,6 +13,10 @@
     "@types/bootstrap": "^5.2.10",
     "astro": "^5.1.6",
     "astro-bootstrap": "^0.7.0",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.32"
   }
 }
