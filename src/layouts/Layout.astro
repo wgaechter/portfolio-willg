@@ -1,13 +1,18 @@
-<!doctype html>
+---
+import 'bootstrap/dist/css/bootstrap.css'
+---
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<meta name="generator" content={Astro.generator} />
-	<link rel="stylesheet" href="/path/to/layout.css" />
-	<title>Astro Basics</title>
-</head>    
+	<link rel="stylesheet" href="/src/css/layout.css" />
+	<title>William Gaechter</title>
+</head>
+
 <header>
 	<div id="headerName_container">
 		<strong>
@@ -20,13 +25,13 @@
 		<div class="container">
 			<ul class="navbar-nav flex-grow-1 justify-content-center">
 				<li class="nav-item icon" id="Linkedin">
-					<a href="https://www.linkedin.com/in/williamgaechter/" target="_blank"><img src="~/lib/static/LinkedIn_icon72x72.svg" height="20" width="20" /></a>
+					<a href="https://www.linkedin.com/in/williamgaechter/" target="_blank"><img src="/src/assets/LinkedIn_icon72x72.svg" height="20" width="20" /></a>
 				</li>
 				<li class="nav-item icon" id="Github">
-					<a href="https://github.com/wgaechter" target="_blank"><img src="~/lib/static/github-mark.svg" height="20" width="20" /></a>
+					<a href="https://github.com/wgaechter" target="_blank"><img src="/src/assets/github-mark.svg" height="20" width="20" /></a>
 				</li>
 				<li class="nav-item icon" id="LeetCode">
-					<a href="https://leetcode.com/u/wgaechter/" target="_blank"><img src="~/lib/static/leetcode.svg" height="20" width="20" /></a>
+					<a href="https://leetcode.com/u/wgaechter/" target="_blank"><img src="/src/assets/leetcode.svg" height="20" width="20" /></a>
 				</li>
 			</ul>
 		</div>
@@ -35,27 +40,18 @@
 		<div class="container">
 			<ul class="navbar-nav justify-content-center" id="MainNavbarList">
 				<li class="nav-item main">
-					<a class="nav-link" href="/index.astro">Home</a>
+					<a class="nav-link" href="/">Home</a>
 				</li>
 				<li class="nav-item main">
-					<a class="nav-link" href="/resume.astro">Resume</a>
+					<a class="nav-link" href="/resume">Resume</a>
 				</li>
 				<li class="nav-item main">
-					<a class="nav-link" href="/projects.astro">Projects</a>
+					<a class="nav-link" href="/projects">Projects</a>
 				</li>
 				<li class="nav-item main">
-					<a class="nav-link" href="/contact.astro">Contact</a>
+					<a class="nav-link" href="/contact">Contact</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 </header>
-
-<footer class="footer text-muted">
-	<div class="container">
-		&copy; 2024 - William Gaechter - Data Analyst and Enigineer <a href="#" id="swissMode"><img src="~/lib/static/Flag_of_Switzerland.svg" height="15" width="15" /></a>
-
-	</div>
-</footer>
-
-
