@@ -14,7 +14,7 @@
 }
 
 #headerName_title {
-    font-size: 14px;
+    font-size: 20px;
 }
 
 #IconNavbar {
@@ -25,10 +25,9 @@
 }
 
 li.nav-item.icon {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-
 
 #MainNavbar {
     display: flex;
