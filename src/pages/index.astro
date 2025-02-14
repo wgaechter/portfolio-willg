@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../layouts/Footer.astro';
+import '../styles/index.css'
 
 import { getCollection, render } from 'astro:content';
 
@@ -22,7 +23,10 @@ const posts = await getCollection('posts');
 				return (
 				<li>
 					<h2>{post.data.title}</h2>
-					<Content />
+					<div class="content">
+						<Content />
+					</div> 
+					
 				</li>
 			)})
 		}
