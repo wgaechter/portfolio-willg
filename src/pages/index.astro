@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../layouts/Footer.astro';
 
+import { getCollection, render } from 'astro:content';
+
+const posts = await getCollection('posts');
+
 
 // https://stackoverflow.com/questions/37770620/how-to-include-markdown-md-files-inside-html-files
 
@@ -10,14 +14,19 @@ import Footer from '../layouts/Footer.astro';
 ---
 <Layout></Layout>
 
-<head>
-	<!-- Import element definition and auto-register -->
-	<script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
-  </head>
-<body>
-<!-- Profit! -->
-<zero-md src="../src/assets/test.md"></zero-md>
-</body>
-  
+<div class='container'>
+	<ul>
+		{
+			posts.map(async (post: any) => { 
+				const { Content } = await post.render();
+				return (
+				<li>
+					<h2>{post.data.title}</h2>
+					<Content />
+				</li>
+			)})
+		}
+	</ul>
+</div>
 
 <Footer></Footer>
