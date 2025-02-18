@@ -15,7 +15,8 @@
     "astro-bootstrap": "^0.7.0",
     "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
-    "octokit": "^4.1.1"
+    "octokit": "^4.1.1",
+    "zero-md": "^3.1.7"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.32"
