@@ -15,6 +15,8 @@ const posts = await getCollection('posts');
 ---
 <Layout></Layout>
 
+<h1>Welcome</h1>
+
 <div class='container'>
 	<ul>
 		{
@@ -22,15 +24,15 @@ const posts = await getCollection('posts');
 				const { Content } = await post.render();
 				return (
 				<li>
-					<h2>{post.data.title}</h2>
-					<div class="content">
+					<div class="md-card inactive">
 						<Content />
-					</div> 
-					
+					</div>
 				</li>
 			)})
 		}
 	</ul>
 </div>
+
+<script src="../scripts/index.ts"></script>
 
 <Footer></Footer>
