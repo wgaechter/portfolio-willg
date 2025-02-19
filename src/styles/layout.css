@@ -2,6 +2,20 @@
     font-family: 'Cambria', sans-serif;
 }
 
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 185px;
+    background-color: white;
+}
+
+body {
+    margin-top: 200px; /* Ensure body content sits below the header */
+}
+
 #headerName_container {
     display: flex;
     flex-direction: column;
@@ -45,7 +59,9 @@ a.nav-link {
 }
 
 hr {
-    width: 90%;
     margin: auto;
-    border: 2px solid black;
+    margin-top: 20px;
+    width: 90%;
+    border: 1px solid black;
+    opacity: 1;
 }
