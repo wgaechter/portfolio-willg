@@ -15,15 +15,15 @@ const posts = await getCollection('posts');
 ---
 <Layout></Layout>
 
-<h1>Welcome</h1>
+<h1 class='welcome'>Welcome</h1>
 
-<div class='container'>
-	<ul>
+<div class='md-container'>
+	<ul class='md-list'>
 		{
 			posts.map(async (post: any) => { 
 				const { Content } = await post.render();
 				return (
-				<li>
+				<li class='md-item'>
 					<div class="md-card inactive">
 						<Content />
 					</div>
@@ -33,6 +33,6 @@ const posts = await getCollection('posts');
 	</ul>
 </div>
 
-<script src="../scripts/index.ts"></script>
-
 <Footer></Footer>
+
+<script src="../scripts/index.ts"></script>
