@@ -83,6 +83,11 @@ div.md-card > ul {
     text-align: left;
 }
 
+pre {
+    border-radius: 4px;
+    padding: 10px;
+}
+
 code {
     font-family: "Monaco", monospace;
 }
