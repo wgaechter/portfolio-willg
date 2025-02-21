@@ -8,9 +8,10 @@ import $ from 'jquery';
 $("div.md-card.inactive").on('click', function(this) { 
     console.log("clicked")
     $(this).removeClass("inactive").addClass("active");
-    $("div.md-card.inactive").fadeOut();
+    $(this).css("height", "100%");
 
-    // 
+    // Transform active element to full height
+
 });
 
 //on return to grid:
