@@ -6,31 +6,27 @@ import '../styles/index.css'
 import { getCollection, render } from 'astro:content';
 
 const posts = await getCollection('posts');
-
-
-// https://stackoverflow.com/questions/37770620/how-to-include-markdown-md-files-inside-html-files
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+
 <Layout></Layout>
 
 <h1 class='welcome'>Welcome</h1>
 
 <div class='md-container'>
-	<ul class='md-list'>
-		{
-			posts.map(async (post: any) => { 
-				const { Content } = await post.render();
-				return (
-				<li class='md-item'>
-					<div class="md-card inactive">
-						<Content />
-					</div>
-				</li>
-			)})
-		}
-	</ul>
+    <ul class='md-list'>
+        {
+            posts.map(async (post: any) => { 
+                const { Content } = await post.render();
+                return (
+                <li class='md-item'>
+                    <div class="md-card inactive">
+                        <Content />
+                    </div>
+                </li>
+                )
+            })
+        }
+    </ul>
 </div>
 
 <Footer></Footer>
