@@ -35,21 +35,19 @@ html body {
     position: relative; /* Added to position the gradient */
     padding-bottom: 20px; /* Added padding before the bottom border */
     overflow: hidden;
-    transition: height 0.3s ease; /* Smooth transition for height */
-}
-
-.md-item.expanded {
-    height: auto; /* Allow the item to expand to its full height */
-    
 }
 
 .md-item .md-card {
     max-height: 300px;
     overflow: hidden;
-    transition: max-height 5s ease; /* Smooth transition for max-height */
+    transition: max-height 0.3s ease;
 }
 
 .md-item.expanded .md-card {
+    max-height: none; /* Allow the card to expand to its full height */
+}
+
+.md-item input[type="checkbox"]:checked ~ .md-card {
     max-height: none; /* Allow the card to expand to its full height */
 }
 
@@ -58,9 +56,9 @@ html body {
     position: absolute;
     top: 85%; /* Start the shadow at the last 15% of the content */
     left: 0;
-    width: 100%;
-    height: 15%; /* Cover the last 15% of the content */
-    pointer-events: none; /* Ensure the shadow does not interfere with interactions */
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
     z-index: -1; /* Ensure the shadow is behind the text */
 }
 
