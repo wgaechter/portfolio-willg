@@ -5,13 +5,10 @@ import $ from 'jquery';
     // fade all inactive elements
     // transform active element to full screen and adjust
 
-$("div.md-card.inactive").on('click', function(this) { 
-    console.log("clicked")
-    $(this).removeClass("inactive").addClass("active");
-    $(this).css("height", "100%");
-
-    // Transform active element to full height
-
+$("div.md-card.inactive").on('click', function() { 
+    console.log("clicked");
+    $(this).closest('.md-item').toggleClass("expanded");
+    $(this).toggleClass("inactive active");
 });
 
 //on return to grid:

@@ -33,7 +33,22 @@ html body {
     border-bottom: 1px solid black;
     position: relative; /* Added to position the gradient */
     padding-bottom: 5px; /* Added padding before the bottom border */
-    overflow-y: hidden;
+    overflow: hidden;
+    transition: height 0.3s ease; /* Smooth transition for height */
+}
+
+.md-item.expanded {
+    height: auto; /* Allow the item to expand to its full height */
+}
+
+.md-item .md-card {
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Smooth transition for max-height */
+}
+
+.md-item.expanded .md-card {
+    max-height: none; /* Allow the card to expand to its full height */
 }
 
 .md-item::before {
