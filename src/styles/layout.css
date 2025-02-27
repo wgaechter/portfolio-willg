@@ -8,7 +8,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    height: 185px;
+    height: 175px;
     background-color: white;
 }
 
@@ -36,6 +36,7 @@ body {
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    margin-top: 10px;
 }
 
 li.nav-item.icon {
@@ -60,7 +61,6 @@ a.nav-link {
 
 hr {
     margin: auto;
-    margin-top: 20px;
     width: 90%;
     border: 1px solid black;
     opacity: 1;
