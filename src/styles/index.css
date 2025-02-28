@@ -13,7 +13,7 @@ html body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    margin: 75px;
     block-size: fit-content;
     overflow-y: visible;
     height: auto;
@@ -25,78 +25,98 @@ html body {
     grid-template-columns: 1fr;
     gap: 10px;
     width: auto;
+    padding: 0px;
 }
 
 .md-item {
     list-style-type: none;
     height: 300px;
+    border-top: 1px solid black;
     border-bottom: 1px solid black;
-    position: relative; /* Added to position the gradient */
-    padding-bottom: 5px; /* Added padding before the bottom border */
+    position: relative;
+    padding-bottom: 20px;
     overflow: hidden;
-    transition: height 0.3s ease; /* Smooth transition for height */
-}
-
-.md-item.expanded {
-    height: auto; /* Allow the item to expand to its full height */
 }
 
 .md-item .md-card {
-    max-height: 300px;
     overflow: hidden;
-    transition: max-height 0.3s ease; /* Smooth transition for max-height */
+    padding-bottom: 50px;
 }
 
-.md-item.expanded .md-card {
-    max-height: none; /* Allow the card to expand to its full height */
-}
-
-.md-item::before {
-    content: "";
+.arrow-container {
+    --color: #a5a5b0;
+    --size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 85%; /* Start the shadow at the last 15% of the content */
-    left: 0;
-    width: 100%;
-    height: 15%; /* Cover the last 15% of the content */
-    box-shadow: inset 0 -20px 20px -20px rgba(0, 0, 0, 0.5); /* Added linear gradient shadow within the box */
-    pointer-events: none; /* Ensure the shadow does not interfere with interactions */
-    z-index: -1; /* Ensure the shadow is behind the text */
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+    height: 1em;
+    width: 3em;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+    z-index: 10;
 }
 
-.md-item::after {
-    content: ""; 
+.arrow-container .chevron-down {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;    
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
-    pointer-events: none; /* Ensure the gradient does not interfere with interactions */
+    animation: keyframes-return .5s;
+}
+
+/* ------ On check event ------ */
+.arrow-container input:checked ~ .chevron-down {
+    animation: keyframes-rotate .5s;
+    transform: rotate(180deg);
+}
+
+/* ------ Hide the default checkbox ------ */
+.arrow-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-rotate {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: rotate(-180deg);
+    }
+}
+
+@keyframes keyframes-return {
+    0% {
+      transform: rotate(-180deg);
+      opacity: 0;
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
 }
 
 div.md-card {
     display: block;
     flex-direction: column;
-    max-height: 500px;
     align-items: center;
     padding: 15px;
     justify-content: center;
     overflow: hidden;
     position: relative; /* Added to position the gradient */
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-
-div.md-card::after {
-    position: absolute;
-    bottom: 0;
-    height: 25%; /* Adjusted height to 25% */
-    width: calc(100% + (15px * 2));
-    left: -10px;
-    content: "";
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden; /* Ensure no scroll bars */
 }
 
 div.md-card > h2 {

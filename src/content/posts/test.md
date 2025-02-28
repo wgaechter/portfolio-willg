@@ -1,5 +1,6 @@
 ---
 title: Test 1
+id: 1
 ---
 # Lorem Ipsum
 

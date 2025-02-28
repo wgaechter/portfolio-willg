@@ -3,7 +3,6 @@ import $ from 'jquery';
 //Fade in the page
 
 
-
 var path:string = window.location.pathname
 console.log(path);
 //remove the underline from all to clear
